@@ -63,8 +63,8 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                     child: BlocConsumer<TasksBloc, TasksState>(
                         listener: (context, state) {
                       if (state is AddTaskFailure) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            getSnackBar(state.error, kRed));
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(getSnackBar(state.error, kRed));
                       }
                       if (state is AddTasksSuccess) {
                         Navigator.pop(context);
@@ -160,12 +160,12 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                                 child: ElevatedButton(
                                     style: ButtonStyle(
                                       foregroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               Colors.white),
                                       backgroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               kWhiteColor),
-                                      shape: MaterialStateProperty.all<
+                                      shape: WidgetStateProperty.all<
                                           RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
@@ -194,12 +194,12 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                                 child: ElevatedButton(
                                     style: ButtonStyle(
                                       foregroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               Colors.white),
                                       backgroundColor:
-                                          MaterialStateProperty.all<Color>(
+                                          WidgetStateProperty.all<Color>(
                                               kPrimaryColor),
-                                      shape: MaterialStateProperty.all<
+                                      shape: WidgetStateProperty.all<
                                           RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(
